@@ -1,5 +1,5 @@
 {% set name = "llama-cloud" %}
-{% set version = "0.1.46" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/llama_cloud-{{ version }}.tar.gz
-  sha256: e86f8791c053590d70cc59e0fc13ce72f9b681a8e658bc61df86d0285288d8ee
+  sha256: 00606bfe1fc6db02d101f92c0fd5e689c9de79b7b84ad19002e0e11603d36b1b
 
 build:
   noarch: python
@@ -17,13 +17,18 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core
+    - hatchling
+    - hatch-fancy-pypi-readme
     - pip
   run:
+    - anyio >=3.5.0,<5
+    - distro >=1.7.0,<2
+    - sniffio
+    - typing_extensions >=4.10,<5
     - certifi >=2024.7.4
     - python >={{ python_min }},<4.0
-    - pydantic >=1.10
-    - httpx >=0.20.0
+    - pydantic >=1.9.0,<3
+    - httpx >=0.23.0,<1
 
 test:
   imports:
