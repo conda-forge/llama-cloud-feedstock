@@ -1,5 +1,5 @@
 {% set name = "llama-cloud" %}
-{% set version = "1.6.0" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/llama_cloud-{{ version }}.tar.gz
-  sha256: b00c75df76b59becca72f262c755a59529f0c09f0cda79e086eedefc62d59ac8
+  sha256: 9969c884e0151e4c5bc515aa33b0b2e25c567d8616bc2cef0cfb8651a4656381
 
 build:
   noarch: python
@@ -24,7 +24,7 @@ requirements:
     - anyio >=3.5.0,<5
     - distro >=1.7.0,<2
     - sniffio
-    - typing_extensions >=4.10,<5
+    - typing_extensions >=4.14,<5
     - certifi >=2024.7.4
     - python >={{ python_min }},<4.0
     - pydantic >=1.9.0,<3
