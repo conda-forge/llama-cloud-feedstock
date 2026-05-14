@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: llama-cloud
-  version: 2.4.1
+  version: 2.5.0
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/llama_cloud-${{ version }}.tar.gz
-  sha256: bfb09ccbaa4dab7df1829d23aeda39d638a2d36fa6f70fe79d5e82d970d887dc
+  sha256: 2e26ce54436642427aa6f194265b48c52d00c2c9b76a07367458364d2df9d9d9
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
@@ -28,11 +28,9 @@ requirements:
     - distro >=1.7.0,<2
     - sniffio
     - typing_extensions >=4.14,<5
-    - certifi >=2024.7.4
     - python >=${{ python_min }},<4.0
     - pydantic >=1.9.0,<3
     - httpx >=0.23.0,<1
-
 tests:
   - python:
       imports:
