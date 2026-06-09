@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: llama-cloud
-  version: "2.8.0"
+  version: "2.9.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/llama_cloud-${{ version }}.tar.gz
-  sha256: ee13ecdb2c924363eb1023a43619dbd072e182c596ed5c292b8a5c95b01a0ce5
+  sha256: c8d455c3655d7a59299f737b9668721294468bbe8b3f22f7a40b1b175ea851c5
 
 build:
   number: 0
